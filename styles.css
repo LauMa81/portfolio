@@ -398,20 +398,6 @@
             transition: width 0.5s ease;
         }
 
-        /* Animaatio */
-        .special {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .animation-box {
-            width: 100px;
-            height: 100px;
-            background: #e85d04;
-            margin: 20px auto;
-            animation: bounce 2s infinite;
-        }
-
         @keyframes bounce {
             0%, 100% {
                 transform: translateY(0);
