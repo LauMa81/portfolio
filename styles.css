@@ -689,7 +689,7 @@
 /* ReCAPTCHA-säilö */
 .recaptcha-wrapper {
     display: flex;
-    justify-content: center; /* Keskitetään reCAPTCHA */
+    justify-content: left; /* Keskitetään reCAPTCHA */
     align-items: center; /* Keskitetään pystysuunnassa */
     width: 100%; /* Vie koko leveyden */
     overflow: hidden; /* Piilotetaan ylimääräinen sisältö */
