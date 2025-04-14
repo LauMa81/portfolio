@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Tarkistetaan, että kaikki kentät on täytetty
     if (!empty($name) && !empty($email) && !empty($message)) {
         // Sähköpostin asetukset
-        $to = "lauramak@lauramakila.fi"; // Korvaa omalla sähköpostiosoitteellasi
+        $to = "laura.makila@lauramakila.fi"; // Korvaa omalla sähköpostiosoitteellasi
         $subject = "Uusi yhteydenotto: $name";
         $body = "Nimi: $name\nSähköposti: $email\n\nViesti:\n$message";
         $headers = "From: $email";
