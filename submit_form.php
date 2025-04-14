@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
-    $recaptcha_secret = '6LcejhYrAAAAAMzfbaglbyrI1kwUZ_vrDmUYilLy'; // Salainen avain
+    $recaptcha_secret = '6Le-BhgrAAAAACOLw77oHKVDw_sim0QEJbgkznJG'; // Salainen avain
     $recaptcha_response = $_POST['g-recaptcha-response'];
 
     // Tarkistetaan reCAPTCHA
