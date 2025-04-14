@@ -12,7 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response_keys = json_decode($response, true);
 
     if (intval($response_keys["success"]) !== 1) {
-        echo "<p>reCAPTCHA-tarkistus epäonnistui. Yritä uudelleen.</p>";
+        echo "<div style='text-align: center; margin-top: 50px;'>
+                <h2 style='color: red;'>reCAPTCHA-tarkistus epäonnistui. Yritä uudelleen.</h2>
+                <a href='Ota yhteytta.html' style='display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #e85d04; color: white; text-decoration: none; border-radius: 5px;'>Palaa takaisin</a>
+              </div>";
         exit;
     }
 
@@ -26,14 +29,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Lähetetään sähköposti
         if (mail($to, $subject, $body, $headers)) {
-            echo "<p>Viesti lähetetty onnistuneesti! Kiitos, että otit yhteyttä.</p>";
+            echo "<div style='text-align: center; margin-top: 50px;'>
+                    <h2 style='color: green;'>Viesti lähetetty onnistuneesti! Kiitos, että otit yhteyttä.</h2>
+                    <a href='Ota yhteytta.html' style='display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #e85d04; color: white; text-decoration: none; border-radius: 5px;'>Palaa takaisin</a>
+                  </div>";
         } else {
-            echo "<p>Viestiä ei voitu lähettää. Yritä uudelleen myöhemmin.</p>";
+            echo "<div style='text-align: center; margin-top: 50px;'>
+                    <h2 style='color: red;'>Viestiä ei voitu lähettää. Yritä uudelleen myöhemmin.</h2>
+                    <a href='Ota yhteytta.html' style='display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #e85d04; color: white; text-decoration: none; border-radius: 5px;'>Palaa takaisin</a>
+                  </div>";
         }
     } else {
-        echo "<p>Kaikki kentät ovat pakollisia. Täytä lomake uudelleen.</p>";
+        echo "<div style='text-align: center; margin-top: 50px;'>
+                <h2 style='color: red;'>Kaikki kentät ovat pakollisia. Täytä lomake uudelleen.</h2>
+                <a href='Ota yhteytta.html' style='display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #e85d04; color: white; text-decoration: none; border-radius: 5px;'>Palaa takaisin</a>
+              </div>";
     }
 } else {
-    echo "<p>Virheellinen pyyntö.</p>";
+    echo "<div style='text-align: center; margin-top: 50px;'>
+            <h2 style='color: red;'>Virheellinen pyyntö.</h2>
+            <a href='Ota yhteytta.html' style='display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #e85d04; color: white; text-decoration: none; border-radius: 5px;'>Palaa takaisin</a>
+          </div>";
 }
+
+
+
+
 ?>
