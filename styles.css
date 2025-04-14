@@ -47,7 +47,7 @@
         }
 
         .navbar a {
-            font-size: 1.5rem; /* 16px oletuksena */
+            font-size: 1rem; /* 16px oletuksena */
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;  
@@ -466,28 +466,35 @@
         /*Ota yhteyttä*/
         /* Sisältö */
         .content2 {
+            background: url('images/your-background-image.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
             padding: 50px 20px;
             text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .content2 h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .content2 p {
-            font-size: 1rem;
-            margin-bottom: 40px;
+            font-size: 1.2rem;
             line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         /* Yhteystiedot ja lomake */
         .contact-section {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
+            justify-content: center;
+            padding: 40px;
             gap: 20px;
+            background-color: #f7f7f7; /* Vaaleanharmaa tausta */
         }
 
         .contact-info, .contact-form {
@@ -528,7 +535,7 @@
 
         .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             margin-bottom: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -542,19 +549,20 @@
         }
 
         .submit-button {
-            background: #e85d04;
+            background: linear-gradient(90deg, #e85d04, #ff7f11); /* Liukuväri */
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
             border-radius: 5px;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .submit-button:hover {
-            background: #ff7f11;
+            transform: scale(1.05); /* Suurentaa hieman hoverilla */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Lisää varjo hoverilla */
         }
 
 
@@ -667,6 +675,42 @@
     }
 }
 
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; /* Asetetaan pystysuuntaiseksi */
+        padding: 20px;
+    }
+
+    .contact-info, .contact-form {
+        max-width: 100%; /* Vie koko leveyden */
+    }
+}
+
+/* ReCAPTCHA-säilö */
+.recaptcha-wrapper {
+    display: flex;
+    justify-content: center; /* Keskitetään reCAPTCHA */
+    align-items: center; /* Keskitetään pystysuunnassa */
+    width: 100%; /* Vie koko leveyden */
+    overflow: hidden; /* Piilotetaan ylimääräinen sisältö */
+}
+
+.g-recaptcha {
+    transform: scale(0.85); /* Skaalataan pienemmäksi */
+    transform-origin: 0 0; /* Skaalaus alkaa vasemmasta yläkulmasta */
+}
+
+@media (max-width: 768px) {
+    .g-recaptcha {
+        transform: scale(0.75); /* Skaalataan pienemmäksi pienemmillä näytöillä */
+    }
+}
+
+@media (max-width: 480px) {
+    .g-recaptcha {
+        transform: scale(0.65); /* Skaalataan vielä pienemmäksi erittäin pienillä näytöillä */
+    }
+}
 
 
 
