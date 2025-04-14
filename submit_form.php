@@ -4,11 +4,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
+    $recaptcha_secret = '6LcejhYrAAAAAMzfbaglbyrI1kwUZ_vrDmUYilLy'; // Salainen avain
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+
+    // Tarkistetaan reCAPTCHA
+    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
+    $response_keys = json_decode($response, true);
+
+    if (intval($response_keys["success"]) !== 1) {
+        echo "<p>reCAPTCHA-tarkistus epäonnistui. Yritä uudelleen.</p>";
+        exit;
+    }
 
     // Tarkistetaan, että kaikki kentät on täytetty
     if (!empty($name) && !empty($email) && !empty($message)) {
         // Sähköpostin asetukset
-        $to = "laura.makila81@gmail.com"; // Korvaa omalla sähköpostiosoitteellasi
+        $to = "lauramak@lauramakila.fi"; // Korvaa omalla sähköpostiosoitteellasi
         $subject = "Uusi yhteydenotto: $name";
         $body = "Nimi: $name\nSähköposti: $email\n\nViesti:\n$message";
         $headers = "From: $email";
@@ -25,16 +36,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "<p>Virheellinen pyyntö.</p>";
 }
-
-$recaptcha_secret = '6LeCixYrAAAAAKTCubt5vLu4IGqRq9geszB9bJNq';
-$recaptcha_response = $_POST['g-recaptcha-response'];
-
-$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
-$response_keys = json_decode($response, true);
-
-if(intval($response_keys["success"]) !== 1) {
-    echo 'reCAPTCHA-tarkistus epäonnistui. Yritä uudelleen.';
-    exit;
-}
-
 ?>
