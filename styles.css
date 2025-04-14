@@ -30,28 +30,39 @@
 
 
         .navbar {
-            
-                display: flex; /* Käytetään flexbox-asettelua */
-                justify-content: center; /* Keskitetään sisältö vaakasuunnassa */
-                align-items: center; /* Keskitetään sisältö pystysuunnassa */
-                flex-wrap: wrap; /* Sallitaan rivinvaihto pienemmillä näytöillä */
-                position: fixed;
-                top: 0;
-                left: 0; /* Varmistetaan, että navbar alkaa vasemmasta reunasta */
-                width: 100%; /* Navbar vie koko näytön leveyden */
-                background: rgba(0, 0, 0, 0.8);
-                padding: 10px 20px; /* Lisää sisäistä täytettä */
-                z-index: 1000;
-                box-sizing: border-box; /* Sisällyttää paddingin elementin kokonaisleveyteen */
-            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 80px; /* Asetetaan kiinteä korkeus */
+            line-height: 80px; /* Keskitetään teksti pystysuunnassa */
+            width: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 1.9), rgba(0, 0, 0, 0)); /* Liukuväri ylhäältä alas */
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hieno varjo */
         }
-
+        
         .navbar a {
-            font-size: 1rem; /* 16px oletuksena */
+            font-size: 1rem;
             text-decoration: none;
             margin: 0 15px;
-            font-weight: bold;  
+            font-weight: bold;
             color: white;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            color: #ffdd57; /* Korostettu väri hoverilla */
+        }
+
+        .navbar a.active {
+            color: #ffdd57; /* Korostettu väri aktiiviselle linkille */
+            font-weight: bold; /* Halutessasi voit lisätä lihavoinnin */
+            
         }
 
         /* Hamburger-menu */
@@ -82,7 +93,7 @@
             align-items: center;
             text-decoration: none;
             color: white;
-            background: #b35383; /* Kuvakkeen taustaväri */
+            background: #6c3483; /* Kuvakkeen taustaväri */
             padding: 10px;
             border-radius: 50%; /* Pyöristetty kuvake */
             width: 60px;
@@ -108,7 +119,7 @@
         }
         .signature {
             position: absolute;
-            top: 2vw; /* Skaalaa suhteessa näyttöön */
+            top: 0.8vw; /* Skaalaa suhteessa näyttöön */
             left: 3vw;
             font-family: 'Dancing Script', cursive;
             font-size: 2vw; /* Skaalaa fontti suhteessa näyttöön */
@@ -128,6 +139,13 @@
         font-size: 4vw;
     }
 }
+
+        /* Otsikoille koristeellinen fontti */
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #222;
+        }
          
         .hero {
             background: url('images/IMG_3959.JPG') no-repeat center center fixed; /* Taustakuva */
@@ -147,14 +165,15 @@
             max-width: 600px;
         }
         
+                /* Hero-osio */
         .hero-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .hero-text p {
             font-size: 1.2rem;
-            line-height: 1.5;
+            font-weight: 500;
         }
         
         .cta-button {
@@ -164,10 +183,13 @@
             background-color: #e85d04;
             color: white;
             text-decoration: none;
+            font-family: 'Roboto', sans-serif;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 500;
             border-radius: 5px;
             transition: background 0.3s ease;
+            text-transform: uppercase;
+    letter-spacing: 1px;
         }
         
         .cta-button:hover {
