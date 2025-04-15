@@ -2,7 +2,7 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Playfair Display', serif; /* Muutettu fontti */
             background-color: #f1f5f1;
             color: #333;
             scroll-behavior: smooth;
@@ -180,6 +180,12 @@
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: #313030;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #eb6518;
         }
 
 
