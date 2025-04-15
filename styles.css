@@ -170,11 +170,19 @@
 }
 
         /* Otsikoille koristeellinen fontti */
-        h1, h2 {
+        h1 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            color: #222;
+            color: #c4bfbf;
         }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #313030;
+        }
+
+
          
         .hero {
             background: url('images/IMG_3959.JPG') no-repeat center center fixed; /* Taustakuva */
@@ -519,7 +527,7 @@
         .content2 {
             background: url('images/your-background-image.jpg') no-repeat center center;
             background-size: cover;
-            color: white;
+            color: rgb(56, 55, 55);
             padding: 50px 20px;
             text-align: center;
             border-radius: 10px;
@@ -625,29 +633,125 @@
             padding: 20px;
             margin-top: 20px;
         }
-    
-      
-/* Piilotetaan navigointilinkit pienemmillä näytöillä */
-@media (min-width: 300px) and (max-width: 1500px) {
-    .menu-toggle {
-        display: flex; /* Näytetään hamburger-menu */
-    }
+        
+/*NAVIGOINTI RESPONSIIVISUUS*/
 
-    .navbar a {
-        display: none; /* Piilotetaan linkit oletuksena */
-    }
+        
+/* Erittäin pienet näytöt (alle 480px) */
+        @media (max-width: 480px) {
+            /* Tyylit erittäin pienille näytöille */
+            .menu-toggle {
+                display: flex; /* Näytetään hamburger-menu */
+            } 
+            
+            .navbar a {
+                display: none; /* Piilotetaan linkit oletuksena */
+            }
 
-    .navbar.active a {
-        display: block; /* Näytetään linkit, kun menu on aktiivinen */
-        margin: 10px 0;
-        align-items: center;
-    }
+            .navbar {
+                flex-direction: column; /* Muutetaan navigaatio pystysuuntaiseksi */
+                align-items: center; /* Keskitetään sisältö */
+                padding: 10px; /* Pienennetään paddingia */
+            }
+        }
 
-    .navbar {
-        flex-direction: column; /* Muutetaan navigaatio pystysuuntaiseksi */
-        align-items: center; /* Keskitetään sisältö */
-        padding: 10px; /* Pienennetään paddingia */
-    }
+/* Pienet näytöt (481px–768px) */
+        @media (max-width: 768px) {
+            /* Tyylit pienille näytöille */
+
+            .menu-toggle {
+                display: flex; /* Näytetään hamburger-menu */
+            }
+
+            .navbar a {
+                display: none; /* Piilotetaan linkit oletuksena */
+            }
+
+            .navbar {
+                flex-direction: column; /* Muutetaan navigaatio pystysuuntaiseksi */
+                align-items: center; /* Keskitetään sisältö */
+                padding: 10px; /* Pienennetään paddingia */
+            }
+        }
+
+/* Keskikokoiset näytöt (769px–1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* Tyylit keskikokoisille näytöille */
+            .menu-toggle {
+                display: flex; /* Näytetään hampurilaisvalikko */
+            } 
+            
+            .navbar a {
+                display: none; /* Piilotetaan linkit oletuksena */
+            }
+
+            .menu-toggle {
+                display: none; /* Piilotetaan hampurilaisvalikko suuremmilla näytöillä */
+            }
+        
+            .navbar {
+                display: flex; /* Näytetään navigointilinkit vaakasuunnassa */
+                justify-content: center;
+                align-items: center;
+            }
+        
+            .navbar a {
+                display: inline-block; /* Näytetään linkit vaakasuunnassa */
+                margin: 0 15px;
+                font-size: 1.2rem;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+
+/* Suuret näytöt (1025px–1200px) */
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            /* Tyylit suurille näytöille */
+            .menu-toggle {
+                display: none; /* Piilotetaan hampurilaisvalikko suuremmilla näytöillä */
+            }
+        
+            .navbar {
+                display: flex; /* Näytetään navigointilinkit vaakasuunnassa */
+                justify-content: center;
+                align-items: center;
+            }
+        
+            .navbar a {
+                display: inline-block; /* Näytetään linkit vaakasuunnassa */
+                margin: 0 15px;
+                font-size: 1.2rem;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+
+/* Erittäin suuret näytöt (yli 1200px) */
+        @media (min-width: 1201px) {
+            /* Tyylit erittäin suurille näytöille */
+            .menu-toggle {
+                display: none; /* Piilotetaan hampurilaisvalikko suuremmilla näytöillä */
+            }
+        
+            .navbar {
+                display: flex; /* Näytetään navigointilinkit vaakasuunnassa */
+                justify-content: center;
+                align-items: center;
+            }
+        
+            .navbar a {
+                display: inline-block; /* Näytetään linkit vaakasuunnassa */
+                margin: 0 15px;
+                font-size: 1.2rem;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+
+@media (min-width: 300px) and (max-width: 1200px) {  
 
     .etusivun_teksti {
         max-width: 90%; /* Tekstilaatikko vie lähes koko leveyden */
@@ -663,6 +767,8 @@
         flex-direction: column; /* Asetetaan kontaktiosio pystysuuntaiseksi */
     }
 }
+
+
 
 
 @media (max-width: 480px) {
