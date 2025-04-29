@@ -205,42 +205,103 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hieno varjo kuvalle */
 }
  /*rakas päiväkirjani*/
- .diary-content {
-    max-width: 800px;
-    margin: 0 auto;
+
+ .diary-boxes {
+    display: flex;
+    flex-wrap: wrap; /* Sallii laatikoiden rivittymisen */
+    gap: 20px; /* Väli laatikoiden välillä */
+    justify-content: center; /* Keskittää laatikot */
+    margin: 20px;
+}
+ .diary-box {
+    display: block;
+    width: 300px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Vaalea läpinäkyvä tausta */
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.diary-intro {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #6c3483; /* Taianomainen violetti */
-}
-
-.diary-entry {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-left: 4px solid #6c3483;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-}
-
-.diary-entry h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    text-decoration: none;
     color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.diary-box img.diary-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.diary-entry p {
+.diary-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #6c3483; /* Taianomainen violetti */
+}
+
+.diary-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.diary-box:hover {
+    transform: translateY(-5px); /* Nostaa laatikkoa hover-tilassa */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Syvempi varjo hover-tilassa */
+}
+
+.modal {
+    display: none; /* Piilotetaan oletuksena */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Tumma tausta */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.modal-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #6c3483;
+}
+
+.modal-content p {
     font-size: 1rem;
     line-height: 1.6;
     color: #555;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 

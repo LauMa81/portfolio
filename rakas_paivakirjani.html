@@ -9,6 +9,12 @@
 </head>
 <body>
     <div class="navbar">
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span> 
+    </div>
+
         <a href="index.html">Etusivu</a>
         <a href="tietoa minusta.html">Tietoa minusta</a>
         <a href="portfolio.html">Portfolio</a>
@@ -19,30 +25,55 @@
 
     <div class="parallax"></div>
 
-    <div class="content diary-content">
-        <h2>Rakas päiväkirjani</h2>
-        <p class="diary-intro">Tervetuloa matkalle ajatusteni ja unelmieni maailmaan. Tämä päiväkirja on ikkuna siihen, miten näen maailman – täynnä tarinoita, inspiraatiota ja taikaa.</p>
-        
-        <div class="diary-entry">
-            <h3>12. maaliskuuta 2025</h3>
-            <p>Tänään hyvästelin rakkaat hevoseni, Tanjan ja Möykyn. Heidän kanssaan vietin elämäni onnellisimpia hetkiä. Vaikka he eivät enää ole täällä, heidän muistonsa elävät sydämessäni ikuisesti.</p>
-        </div>
-
-        <div class="diary-entry">
-            <h3>15. huhtikuuta 2025</h3>
-            <p>Luovuus on kuin villi virta – se vie mukanaan, kun sille antaa tilaa. Tänään työpajassani syntyi jotain uutta ja kaunista. Jokainen projekti on kuin uusi luku elämäni tarinassa.</p>
-        </div>
-
-        <div class="diary-entry">
-            <h3>29. huhtikuuta 2025</h3>
-            <p>Kevät on täällä, ja sen mukana uudet mahdollisuudet. Olen täynnä intoa ja odotusta siitä, mitä tulevaisuus tuo tullessaan. Jokainen päivä on uusi mahdollisuus luoda jotain merkityksellistä.</p>
-        </div>
-    </div>
+    <div class="diary-boxes">
+      <div class="diary-box" onclick="openModal('modal-12-03-2025')">
+          <img src="images/möykky ja tanja.JPG" alt="Tanja ja Möykky" class="diary-image">
+          <h3>12. maaliskuuta 2025</h3>
+          <p>Hyvästelin rakkaat hevoseni, Tanjan ja Möykyn...</p>
+      </div>
+      <div class="diary-box" onclick="openModal('modal-15-04-2025')">
+          <img src="images/luovuus (2).JPG" alt="Luovuus" class="diary-image">
+          <h3>15. huhtikuuta 2025</h3>
+          <p>Luovuus on kuin villi virta – se vie mukanaan...</p>
+      </div>
+      <div class="diary-box" onclick="openModal('modal-29-04-2025')">
+          <img src="images/kevät.JPG" alt="Kevät" class="diary-image">
+          <h3>29. huhtikuuta 2025</h3>
+          <p>Kevät on täällä, ja sen mukana uudet mahdollisuudet...</p>
+      </div>
+  </div>
+  
+  <!-- Modaali-ikkunat -->
+  <div id="modal-12-03-2025" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal-12-03-2025')">&times;</span>
+          <h3>12. maaliskuuta 2025</h3>
+          <p>Tänään hyvästelin rakkaat hevoseni, Tanjan ja Möykyn. Heidän kanssaan vietin elämäni onnellisimpia hetkiä. Vaikka he eivät enää ole täällä, heidän muistonsa elävät sydämessäni ikuisesti.</p>
+      </div>
+  </div>
+  
+  <div id="modal-15-04-2025" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal-15-04-2025')">&times;</span>
+          <h3>15. huhtikuuta 2025</h3>
+          <p>Luovuus on kuin villi virta – se vie mukanaan, kun sille antaa tilaa. Tänään työpajassani syntyi jotain uutta ja kaunista. Jokainen projekti on kuin uusi luku elämäni tarinassa.</p>
+      </div>
+  </div>
+  
+  <div id="modal-29-04-2025" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal-29-04-2025')">&times;</span>
+          <h3>29. huhtikuuta 2025</h3>
+          <p>Kevät on täällä, ja sen mukana uudet mahdollisuudet. Olen täynnä intoa ja odotusta siitä, mitä tulevaisuus tuo tullessaan. Jokainen päivä on uusi mahdollisuus luoda jotain merkityksellistä.</p>
+      </div>
+  </div>
 
     <div class="parallax"></div>
 
     <div class="footer">
         <p>© 2025 Laura Mäkilä. Kaikki oikeudet pidätetään.</p>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
