@@ -1018,6 +1018,35 @@
     }
 }
 
+/* Rakas päiväkirjani -tyylit */
+/* Responsiivisuus pienemmille näytöille */
+@media (max-width: 768px) {
+    .diary-box {
+        width: 90%; /* Laatikoiden leveys pienemmillä näytöillä */
+        margin: 0 auto; /* Keskittää laatikot */
+    }
+}
+
+@media (max-width: 480px) {
+    .diary-box {
+        width: 100%; /* Laatikoiden leveys täyttää näytön */
+        padding: 15px; /* Pienempi sisäinen marginaali */
+    }
+
+    .diary-box img.diary-image {
+        height: 120px; /* Pienempi korkeus kuvalle */
+    }
+
+    .diary-box h3 {
+        font-size: 1rem; /* Pienempi fonttikoko otsikolle */
+    }
+
+    .diary-box p {
+        font-size: 0.9rem; /* Pienempi fonttikoko tekstille */
+    }
+}
+
+
 
 
 
