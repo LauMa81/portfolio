@@ -204,6 +204,49 @@
     margin-bottom: 15px; /* Väli kuvan ja tekstin välillä */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hieno varjo kuvalle */
 }
+ /*rakas päiväkirjani*/
+ .diary-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Vaalea läpinäkyvä tausta */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.diary-intro {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6c3483; /* Taianomainen violetti */
+}
+
+.diary-entry {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #6c3483;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.diary-entry h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.diary-entry p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+
+
 
 /* Responsiivisuus pienemmille näytöille */
 @media (max-width: 768px) {
