@@ -31,3 +31,42 @@ window.onclick = function(event) {
         }
     });
 }
+
+/* Portfolio suodattimet */
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Poista active-luokka kaikista painikkeista
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Lisää active-luokka klikattuun painikkeeseen
+            this.classList.add('active');
+
+            const category = this.getAttribute('data-category');
+
+            portfolioCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    // Animaatio näyttämiselle
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // Lisää transition-tyylit portfolio-korteille
+    portfolioCards.forEach(card => {
+        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    });
+});

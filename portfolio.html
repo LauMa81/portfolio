@@ -41,63 +41,173 @@
     <div class="parallax"></div>
 
     <div class="content">
-        <h2>Portfolio</h2>
-        <p>Tässä on esimerkkejä projekteistani, jotka kuvastavat luovuuttani ja osaamistani.</p>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="images/verkkosivumalli.png" alt="verkkosivumalli">
-                <h3>Verkkosivupohja</h3>
-                <p>Verkkosivupohja mahdolliselle asiakkaalle.</p>
-                <p>Html, CSS, JavaScript</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/IMG_3830.JPG" alt="Harrastuksena valokuvaus">
-                <h3>Harrastusvalokuvaus</h3>
-                <p>Pidän selkeistä, tunteita herättävistä kuvista. Amatööritasolla.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/20240125_093917.jpg" alt="Messumateriaali">
-                <h3>Messumateriaali</h3>
-                <p>Materiaalien tuottaminen</p>
-            </div>
+        <!-- Hero Section -->
+        <section class="portfolio-hero">
+            <h1>Portfolio</h1>
+            <p class="hero-subtitle">Luovuuden ja osaamisen kohtaamispaikka</p>
+        </section>
 
-            <div class="portfolio-item_alarivi">
-                <img src="images/20211019_211923.jpg" alt="voileipäkakku">
-                <img src="images/20211019_211951.jpg" alt="kinderpiirakka">
-                <h3>Leivonta</h3>
-                <p>Innostus leivontaan</p>
-            </div>
+        <!-- Category Filter -->
+        <section class="portfolio-filters">
+            <button class="filter-btn active" data-category="all">Kaikki</button>
+            <button class="filter-btn" data-category="teknologia">Teknologia</button>
+            <button class="filter-btn" data-category="kasityot">Käsityöt</button>
+            <button class="filter-btn" data-category="media">Media</button>
+            <button class="filter-btn" data-category="saneeraus">Saneeraus</button>
+        </section>
 
-            <div class="portfolio-item_alarivi">
-                <img src="images/FB_IMG_1743578519547.jpg" alt="Harmaa wc remontin jälkeen">
-                <img src="images/FB_IMG_1743577799020.jpg" alt="sininen wc ennen remonttia">
-                <h3>Pienet saneeraukset</h3>
-                <p>Laatoitus, maalaus, tapetointi, WC-pöntön vaihto</p>
-            </div>
+        <!-- Portfolio Grid -->
+        <section class="portfolio-modern-grid">
+            <!-- Teknologia -->
+            <article class="portfolio-card featured" data-category="teknologia">
+                <div class="card-header">
+                    <div class="category-tag tech">Teknologia</div>
+                    <div class="featured-badge">Suosittu</div>
+                </div>
+                <div class="card-image">
+                    <img src="oppimisseikkailu.png" alt="Oppimisseikkailu-sovellus">
+                    <div class="image-overlay">
+                        <a href="https://oppimisseikkailu-web.streamlit.app/" target="_blank" class="cta-button">
+                            <i class="fas fa-play"></i> Kokeile
+                        </a>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Oppimisseikkailu</h3>
+                    <p>Interaktiivinen oppimispeli lapsille. Streamlit-sovellus keskittymiskyvyn ja oppimisen tueksi.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">UI/UX</span>
+                    </div>
+                </div>
+            </article>
 
-            <div class="portfolio-item_alarivi">
-            <img src="oppimisseikkailu.png" alt="oppimisseikkalu peli">
-            <img src="viestintäsovellus.png" alt="viestintäsovellus">
-            <h3>Sovelluskehitys</h3>
-            <p>Sovellus lapsille oppimiseen ja keskittymiseen sekä sovellus yrityksen sisäiseen viestintään.</p>
-            <a href="https://oppimisseikkailu-web.streamlit.app/" target="_blank" class="try-button">Kokeile oppimispeliä</a>
-            </div>
+            <article class="portfolio-card" data-category="teknologia">
+                <div class="card-header">
+                    <div class="category-tag tech">Teknologia</div>
+                </div>
+                <div class="card-image">
+                    <img src="viestintäsovellus.png" alt="Viestintäsovellus">
+                </div>
+                <div class="card-content">
+                    <h3>Viestintäsovellus</h3>
+                    <p>Yrityksen sisäinen viestintäratkaisu tehokkaan kommunikaation tueksi.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Backend</span>
+                    </div>
+                </div>
+            </article>
 
-            <div class="portfolio-item_alarivi">
-                <iframe 
-                    width="100%" 
-                    height="200" 
-                    src="https://www.youtube.com/embed/4SF4YEXgIhc?start=12" 
-                    title="YouTube-video" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-                <h3>Videomateriaali</h3>
-                <p>Erään projektin videoesittely materiaali</p>
-                <p><a href="https://www.youtube.com/watch?v=4SF4YEXgIhc&t=12s" target="_blank">Katso video YouTubessa</a></p>
-            </div>
-        </div>
+            <article class="portfolio-card" data-category="teknologia">
+                <div class="card-header">
+                    <div class="category-tag tech">Teknologia</div>
+                </div>
+                <div class="card-image">
+                    <img src="images/verkkosivumalli.png" alt="Verkkosivumalli">
+                </div>
+                <div class="card-content">
+                    <h3>Verkkosivupohja</h3>
+                    <p>Responsiivinen verkkosivupohja asiakasprojektia varten.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Media -->
+            <article class="portfolio-card wide" data-category="media">
+                <div class="card-header">
+                    <div class="category-tag media">Media</div>
+                </div>
+                <div class="card-video">
+                    <iframe 
+                        width="100%" 
+                        height="280" 
+                        src="https://www.youtube.com/embed/4SF4YEXgIhc?start=12" 
+                        title="Projektivideo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Projektin videoesittely</h3>
+                    <p>Ammatillinen videotuotanto projektin dokumentointia varten.</p>
+                    <a href="https://www.youtube.com/watch?v=4SF4YEXgIhc&t=12s" target="_blank" class="external-link">
+                        <i class="fab fa-youtube"></i> Katso YouTubessa
+                    </a>
+                </div>
+            </article>
+
+            <article class="portfolio-card" data-category="media">
+                <div class="card-header">
+                    <div class="category-tag media">Media</div>
+                </div>
+                <div class="card-image">
+                    <img src="images/IMG_3830.JPG" alt="Valokuva">
+                </div>
+                <div class="card-content">
+                    <h3>Harrastusvalokuvaus</h3>
+                    <p>Luontoaiheet ja tunnelmakuvat. Selkeitä, tunteita herättäviä kuvia.</p>
+                </div>
+            </article>
+
+            <article class="portfolio-card" data-category="media">
+                <div class="card-header">
+                    <div class="category-tag media">Media</div>
+                </div>
+                <div class="card-image">
+                    <img src="images/20240125_093917.jpg" alt="Messumateriaali">
+                </div>
+                <div class="card-content">
+                    <h3>Messumateriaali</h3>
+                    <p>Visuaalisen materiaalin suunnittelu ja toteutus messukäyttöön.</p>
+                </div>
+            </article>
+
+            <!-- Käsityöt -->
+            <article class="portfolio-card" data-category="kasityot">
+                <div class="card-header">
+                    <div class="category-tag craft">Käsityöt</div>
+                </div>
+                <div class="card-gallery">
+                    <img src="images/20211019_211923.jpg" alt="Voileipäkakku" class="gallery-main">
+                    <img src="images/20211019_211951.jpg" alt="Kinderpiiraka" class="gallery-thumb">
+                </div>
+                <div class="card-content">
+                    <h3>Leivonta & Koristelu</h3>
+                    <p>Luovia leivonnaisia ja kakkukoristelua erityistilaisuuksiin.</p>
+                </div>
+            </article>
+
+            <!-- Saneeraus -->
+            <article class="portfolio-card" data-category="saneeraus">
+                <div class="card-header">
+                    <div class="category-tag renovation">Saneeraus</div>
+                </div>
+                <div class="card-before-after">
+                    <div class="before-after-container">
+                        <img src="images/FB_IMG_1743577799020.jpg" alt="Ennen" class="before-image">
+                        <img src="images/FB_IMG_1743578519547.jpg" alt="Jälkeen" class="after-image">
+                        <div class="before-label">Ennen</div>
+                        <div class="after-label">Jälkeen</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>WC-saneeraus</h3>
+                    <p>Kokonaisvaltainen kylpyhuoneremontti: laatoitus, maalaus, kalusteet.</p>
+                    <div class="skills-list">
+                        <span class="skill-tag">Laatoitus</span>
+                        <span class="skill-tag">Maalaus</span>
+                        <span class="skill-tag">Asennus</span>
+                    </div>
+                </div>
+            </article>
+        </section>
     </div>
 
     <div class="parallax"></div>
