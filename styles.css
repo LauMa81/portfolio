@@ -537,6 +537,27 @@
             color: #666;
         }
 
+        .try-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, #28a745, #20c997); /* Vihreä liukuväri */
+        text-decoration: none;
+        border-radius: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        border: 2px solid #1e7e34;
+    }
+
+    .try-button:hover {
+        background: linear-gradient(45deg, #20c997, #28a745); /* Vaihtuva liukuväri hover-tilassa */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px); /* Nostaa nappia hieman */
+    }
+
         /*Suosittelijat*/
 
         /* Suosittelijakortit */
