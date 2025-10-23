@@ -81,7 +81,7 @@ body, html {
 
         /* Navigointilinkit, kun valikko on aktiivinen */
         .navbar.active {
-            flex-direction: column; /* Muutetaan pystysuunnaiseksi */
+            flex-direction: column; /* Muutetaan pystysuunnanaiseksi */
             align-items: center;
             background: rgba(0, 0, 0, 0.9); /* Tumma tausta */
 
@@ -1424,12 +1424,24 @@ body, html {
     }
 }
 
-/* Piilota yhteystiedon näkyvyys (helppo palauttaa lisäämällä .reveal-contact) */
-.hidden-contact {
-    display: none !important;
+/* --- Nappien keskitys (vaaka + pysty) --- */
+.button-center, .cta-button, .try-button, .submit-button, .download-button {
+    display: inline-flex;            /* inline-flex säilyttää elem. linjassa ja asettaa sisällön flexiksi */
+    align-items: center;             /* pystysuora keskitys */
+    justify-content: center;         /* vaakasuora keskitys */
+    text-align: center;              /* fallback */
+    vertical-align: middle;          /* inline elementin keskitys */
+    gap: 8px;                        /* icon + teksti erottelu */
 }
 
-/* Jos haluat myöhemmin näyttää numeron, lisää vanhemmalle elementille luokka .reveal-contact */
-.reveal-contact .hidden-contact {
-    display: inline !important;
+/* Mahdollinen korkeus, jotta teksti on keskitetty myös korkeissa painikkeissa */
+.button-center.tall, .cta-button.tall, .try-button.tall, .submit-button.tall {
+    height: 48px;
 }
+
+/* Pieni parannus: varmistetaan että linkit jotka näyttävät painikkeilta perivät keskitys-säännöt */
+a.cta-button, a.try-button, button.submit-button {
+    display: inline-flex;
+}
+
+/* End of button center styles */
