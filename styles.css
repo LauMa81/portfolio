@@ -1,5 +1,4 @@
-
-        body, html {
+body, html {
             margin: 0;
             padding: 0;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; /* Moderni, selkeä fontti */
@@ -82,7 +81,7 @@
 
         /* Navigointilinkit, kun valikko on aktiivinen */
         .navbar.active {
-            flex-direction: column; /* Muutetaan pystysuuntaiseksi */
+            flex-direction: column; /* Muutetaan pystysuunnaiseksi */
             align-items: center;
             background: rgba(0, 0, 0, 0.9); /* Tumma tausta */
 
@@ -1423,4 +1422,14 @@
     .card-before-after {
         margin: 10px;
     }
+}
+
+/* Piilota yhteystiedon näkyvyys (helppo palauttaa lisäämällä .reveal-contact) */
+.hidden-contact {
+    display: none !important;
+}
+
+/* Jos haluat myöhemmin näyttää numeron, lisää vanhemmalle elementille luokka .reveal-contact */
+.reveal-contact .hidden-contact {
+    display: inline !important;
 }
