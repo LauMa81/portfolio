@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ota yhteyttä - Laura Mäkilä</title>
+    <link rel="stylesheet" href="styles.css?v=20251218183249">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="icon" href="images/uusikuvake.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="navbar">
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span> 
+        </div>
+
+        <a href="index.html">Etusivu</a>
+        <a href="tietoa minusta.html">Tietoa minusta</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="suositukset.html">Suositukset</a>
+        <a href="cv.html">CV</a>
+        <a href="Ota yhteytta.html" class="active">Ota yhteyttä minuun</a>
+
+        <div class="signature">Laura Mäkilä</div>
+    </div>
+
+    <div class="icon">
+        <a href="index.html" class="icon-link">
+            <i class="fas fa-home"></i> <!-- Font Awesome -kuvake -->
+            <span class="icon-text">Etusivu</span>
+        </a>
+    </div>
+
+    <div class="parallax"></div>
+
+    <div class="content2">
+        <h2>Ota yhteyttä</h2>
+        <p>Olen täällä auttamassa sinua! Voit ottaa minuun yhteyttä alla olevan lomakkeen kautta tai suoraan sähköpostitse.</p>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-info">
+            <h3>Yhteystiedot</h3>
+            <p><i class="fas fa-envelope"></i> Sähköposti: <a href="mailto:laura.makila@lauramakila.fi">laura.makila@lauramakila.fi</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Sijainti: Joroinen, Suomi</p>
+        </div>
+
+        <div class="contact-form">
+            <h3>Lähetä viesti</h3>
+            <form action="submit_form.php" method="post">
+                <label for="name">Nimi:</label>
+                <input type="text" id="name" name="name" placeholder="Kirjoita nimesi" required>
+
+                <label for="email">Sähköposti:</label>
+                <input type="email" id="email" name="email" placeholder="Kirjoita sähköpostiosoitteesi" required>
+
+                <label for="message">Viesti:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Kirjoita viestisi" required></textarea>
+
+                <div class="recaptcha-wrapper">
+                    <div class="g-recaptcha" data-sitekey="6Le-BhgrAAAAACzhTWDbA8BI6dOoSfi6hswvxW6e"></div>
+                </div>
+                
+                <button type="submit" class="submit-button">Lähetä</button>
+
+                
+
+            </form>
+        </div>
+    </div>
+
+    <div class="parallax"></div>
+
+    <div class="footer">
+        <p>© 2025 Laura Mäkilä. Kaikki oikeudet pidätetään.</p>
+    </div>
+
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
