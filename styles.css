@@ -1498,6 +1498,20 @@ body, html {
     height: 48px;
 }
 
+/* Piilota puhelinnumerot mobiilissa, mutta mahdollista näyttää ne tarvittaessa lisäämällä
+   body-reveal-contact -luokka tai poistamalla luokka HTML:stä. */
+@media (max-width: 768px) {
+    .hidden-contact {
+        display: none !important;
+    }
+}
+
+/* Automaattinen vaihtoehto: jos haluat paljastaa numerot (esim. admin-näkymä),
+   lisää body- tai kontainerielementtiin luokka .reveal-contact */
+.reveal-contact .hidden-contact {
+    display: block !important;
+}
+
 /* Pieni parannus: varmistetaan että linkit jotka näyttävät painikkeilta perivät keskitys-säännöt */
 a.cta-button, a.try-button, button.submit-button {
     display: inline-flex;
