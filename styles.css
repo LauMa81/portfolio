@@ -279,6 +279,65 @@ body, html {
     background-color: rgba(0, 0, 0, 0.8); /* Tumma tausta */
 }
 
+/* Lightbox styles for full-size portfolio images */
+.lightbox {
+    display: none; /* hidden by default */
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background-color: rgba(0,0,0,0.85);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh;
+    position: relative;
+    text-align: center;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+    margin: 0 auto;
+}
+
+.lightbox-caption {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.portfolio-modern-grid img {
+    /* hint to user that image is clickable */
+    cursor: zoom-in;
+}
+
 .modal-content {
     background-color: white;
     margin: 10% auto;

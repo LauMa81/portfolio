@@ -70,3 +70,45 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     });
 });
+
+// Lightbox: avaa kuvat isona modal-ikkunana
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    if (!lightbox) return; // jos lightbox puuttuu, lopeta
+
+    // Avaa lightbox klikkaamalla mitä tahansa portfolio-kuvaa
+    document.querySelectorAll('.portfolio-modern-grid img').forEach(img => {
+        img.addEventListener('click', function () {
+            lightboxImg.src = this.src;
+            lightboxImg.alt = this.alt || '';
+            lightboxCaption.textContent = this.alt || '';
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+        });
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        // vapauta src pienen viiveen jälkeen, jotta sulkeutumisanimointi näkyy
+        setTimeout(() => { lightboxImg.src = ''; lightboxCaption.textContent = ''; }, 200);
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    // Klikkaus taustalle sulkee
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Esc-näppäin sulkee lightboxin
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            if (lightbox.classList.contains('open')) closeLightbox();
+        }
+    });
+});
